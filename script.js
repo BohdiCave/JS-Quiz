@@ -25,20 +25,39 @@ var answerFour = document.querySelector("#answer4");
 var qText = document.querySelector("#qText");
 var result = document.querySelector("#result");
 var qNext = document.querySelector("#next");
+var timer = document.querySelector("#timer");
+var timerClock = document.querySelector("#timerClock");
 
+// Initial environment
+var timeLeft = 50;
 
-// 
+function timerCount () {
+  var quizTimer = setInterval(function() {
+    timeLeft--;
+    timerClock.textContent = timeLeft + " sec";
+
+    if (timeLeft === 0) {
+      clearInterval(quizTimer);
+    }
+
+  }, 1000);
+}
 
 function firstQuestion() {
   qText.innerHTML = questions[0];
-  answerOne.innerHTML = answers1[0];
-  answerTwo.innerHTML = answers2[0];
-  answerThree.innerHTML = answers3[0];
-  answerFour.innerHTML = answers4[0];
 
+  timer.addEventListener("click", function() {
+    answerOne.innerHTML = answers1[0];
+    answerTwo.innerHTML = answers2[0];
+    answerThree.innerHTML = answers3[0];
+    answerFour.innerHTML = answers4[0];
 
+    timerCount();
+
+  });
+  
 }
 
-document.onload(firstQuestion());
+document.addEventListener("load", firstQuestion());
 
 

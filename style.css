@@ -39,9 +39,16 @@ h2 {
   font-size: 28px;
 }
 
-.scores-timer {
+#scores-timer {
   display: flex;
   justify-content: space-between;
+  margin: 10px;
+}
+
+#scores, #timerClock {
+  display: flex;
+  justify-content: space-between; 
+  font-size: 20px;
 }
 
 .card {
@@ -114,7 +121,7 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
   color: hsl(0, 0%, 100%);
-  display: inline-block;
+  display: block;
   font-size: 20px;
   line-height: 20px;
   margin: 5px;
@@ -133,8 +140,9 @@ button[disabled] {
   background: #c0c7cf;
 }
 
-.float-right {
-  float: right;
+.row {
+  display: flex;
+  justify-content: center;
 }
 
 /* #qText {
@@ -160,7 +168,8 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
   background-color: rgba(211, 211, 211, 0.8);
-  border-radius: 10px;
+  border-radius: 5px;
+  padding: 0px 15px;
 }
 
 a:hover {
@@ -168,7 +177,7 @@ a:hover {
   color: black;
 }
 
-@media (max-width: 690px) {
+@media (max-width: 767px) {
   .btn {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
@@ -178,6 +187,13 @@ a:hover {
   #qText {
     font-size: 1.5rem;
   }
+
+  #copyright {
+    text-align: center;
+    border-radius: 5px;
+    width: 40%;
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -185,6 +201,10 @@ a:hover {
     font-size: 1rem;
   }
 
+  #copyright {
+    font-size: 14px;
+  }
+  
   body {
     background-image: url(Assets/lake-reflections-sm.jpg);
   }

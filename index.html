@@ -11,8 +11,13 @@
   <body>
 
       <header>
-        <div class="scores-timer"></div>  
-        <h1>JavaScript quiz</h1>
+        <div class="row" id="scores-timer">
+          <div id="scores"><a href="high-scores.html">View high scores</a></div> 
+          <div id="timerClock"></div>
+        </div>
+        <div class="row">
+          <h1>JavaScript quiz</h1>
+        </div>
       </header>
     
       <main class="container">
@@ -25,16 +30,16 @@
           <div class="card-body">
             <form>
                 <div id="answer-prompt">Please choose the <strong>best</strong> answer:</div>
-                <button id="answer1" class="btn answer"></button>
-                <button id="answer2" class="btn answer"></button>
-                <button id="answer3" class="btn answer"></button>
-                <button id="answer4" class="btn answer"></button>              
+                <button id="answer1" class="btn answer">Answer Choice 1</button>
+                <button id="answer2" class="btn answer">Answer Choice 2</button>
+                <button id="answer3" class="btn answer">Answer Choice 3</button>
+                <button id="answer4" class="btn answer">Answer Choice 4</button>              
             </form>
             <div id="result"></div>
           </div>
      
           <div class="card-footer">
-            <button id="next" class="btn">Next Question</button>
+            <button id="timer" class="btn">Start Timer</button>
           </div>
 
         </div>
@@ -42,9 +47,7 @@
 
       <footer>
         <div class="row">
-          <div class="col-md-5"></div>
-          <div class="col-md-2" id="copyright">&copy; 2020 <a href="https://bohdicave.github.io/">Bohdan Pechenyak</a></div>
-          <div class="col-md-5"></div>
+          <div class="floater" id="copyright">&copy; 2020 <a href="https://bohdicave.github.io/">Bohdan Pechenyak</a></div>
         </div>
       </footer>
 
