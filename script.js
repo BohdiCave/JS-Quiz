@@ -15,7 +15,7 @@ var answers3 = ["querySelector method + variable assignment", "Syntax, Variables
                 "Methods are used only manipulate variables"];
 var answers4 = ["Variable assignment approach", "Functions, Strings, Variables, Syntax, Objects", 
                 "All of the above", "It helps plan the flow of code", "Functions are used only with objects"];
-var correctAnswers = ["Answer 3", "Answer 3", "Answer 4", "Answer 1", "Answer 2"];
+var correctAnswers = [answers3[1], answers3[2], answers4[3], answers1[4], answers2[5]];
 
 
 var answerOne = document.querySelector("#answer1");
