@@ -1,22 +1,35 @@
 // Assignment Code
-var questions = ["What is the most efficient method of accesing the elements of HTML DOM via JavaScript?",
-                 "What are the 5 basic concepts of programming?",
-                 "What is wrong with the following syntax: window.getElementById('#button').addEventListener(click, function() {}; ?",
-                 "Why is it important to assign variables at the beginning of the script?",
-                 "What is the difference between a method and a function?"];
-var answers1 = ["querySelector method", "Variables, Classes, Selectors, Attributes, Functions", 
-                "Window is not the appropriate object to start with", "Global scope and ease of access throughout the script", 
-                "Method is preassigned, function is not"];
-var answers2 = ["setAttribute and addClass methods", "Constants, Variables, Functions, Objects, Arrays", 
-                "Missing quotes around 'click' in 'addEventListener' method", "Because that's how it's done", 
-                "No substantial difference - they are equivalent"];
-var answers3 = ["querySelector method + variable assignment", "Syntax, Variables, Control, Data, Tools", 
-                "Syntax of the 'addEventListener' method", "Historical conventions within the coding community", 
-                "Methods are used only manipulate variables"];
-var answers4 = ["Variable assignment approach", "Functions, Strings, Variables, Syntax, Objects", 
-                "All of the above", "It helps plan the flow of code", "Functions are used only with objects"];
-var correctAnswers = [answers3[1], answers3[2], answers4[3], answers1[4], answers2[5]];
-
+var questions = [
+{Question:"What is the most efficient method of accesing the elements of HTML DOM via JavaScript?",
+A: "querySelector method",
+B: "setAttribute and addClass methods",
+C: "querySelector method + variable assignment",
+D: "Variable assignment approach",
+Answer: "C"},
+{Question:"What are the 5 basic concepts of programming?",
+A: "Variables, Classes, Selectors, Attributes, Functions",
+B: "Constants, Variables, Functions, Objects, Arrays",
+C: "Syntax, Variables, Control, Data, Tools",
+D: "Functions, Strings, Variables, Syntax, Objects",
+Answer: "C"},
+{Question:"What is wrong with the following syntax: window.getElementById('#button').addEventListener(click, function() {}; ?",
+A: "Window is not the appropriate object to start with",
+B: "Missing quotes around 'click' in 'addEventListener' method",
+C: "Syntax of the 'addEventListener' method",
+D: "All of the above",
+Answer: "D"},
+{Question:"Why is it important to assign variables at the beginning of the script?",
+A: "Global scope and ease of access throughout the script",
+B: "Because that's how it's done",
+C: "Historical conventions within the coding community",
+D: "It helps plan the flow of code",
+Answer: "A"},
+{Question:"What is the difference between a method and a function?",
+A: "Method is preassigned, function is not",
+B: "No substantial difference - they are equivalent",
+C: "Methods are used only manipulate variables",
+D: "Functions are used only with objects",
+Answer: "B"}];
 
 var answerOne = document.querySelector("#answer1");
 var answerTwo = document.querySelector("#answer2");
@@ -44,13 +57,13 @@ function timerCount () {
 }
 
 function firstQuestion() {
-  qText.innerHTML = questions[0];
-
+  qText.innerHTML = questions[0].Question;
+  
   timer.addEventListener("click", function() {
-    answerOne.innerHTML = answers1[0];
-    answerTwo.innerHTML = answers2[0];
-    answerThree.innerHTML = answers3[0];
-    answerFour.innerHTML = answers4[0];
+    answerOne.innerHTML = questions[0].A;
+    answerTwo.innerHTML = questions[0].B;
+    answerThree.innerHTML = questions[0].C;
+    answerFour.innerHTML = questions[0].D;
 
     timerCount();
 
