@@ -1,0 +1,191 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #f9fbfd;
+  background-image: url("Assets/bigsur_1280x7202.jpg");
+  background-size: cover;
+}
+
+body a {
+  color: darkslategray;
+  text-decoration: none;
+}
+
+#answer-prompt {
+  font-size: 20px;
+}
+
+header {
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  padding-top: 0px;
+  color: hsl(206, 17%, 28%);
+}
+
+h2 {
+  font-size: 28px;
+}
+
+.scores-timer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: rgba(256, 256, 256, .7);
+  border-radius: 5px;
+  border-width: 1px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  color: hsl(206, 17%, 28%);
+  font-size: 18px;
+  margin: 0 auto;
+  width: 60%;
+  padding: 20px 30px;
+}
+
+.card-header {
+  padding: 0px 20px;
+}
+
+.card-header::after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 2px;
+}
+
+.card-body {
+  min-height: 100px;
+  opacity: 0.6;
+  padding: 10px 20px;  
+}
+
+.card-footer {
+  text-align: center;
+  padding: 0;
+}
+
+.card-footer::before {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 2px;
+}
+
+.card-footer::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.btn {
+  border: none;
+  background: hsla(360, 91%, 36%, .8);
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+    0px;
+  color: hsl(0, 0%, 100%);
+  display: inline-block;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.answer {
+  border: none;
+  background: rgba(8, 135, 83, 0.9);
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+    0px;
+  color: hsl(0, 0%, 100%);
+  display: inline-block;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 5px;
+  padding: 5px 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#result {
+  text-align: center;
+  font-size: 20px;  
+}
+
+button[disabled] {
+  cursor: default;
+  background: #c0c7cf;
+}
+
+.float-right {
+  float: right;
+}
+
+/* #qText {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  display: block;
+  width: 100%;
+  height: 3rem;
+  padding: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 10px 0px;
+  border-radius: 6px;
+  resize: none;
+  overflow: hidden;
+} */
+
+#copyright {
+  color: darkslategray;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+  background-color: rgba(211, 211, 211, 0.8);
+  border-radius: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+@media (max-width: 690px) {
+  .btn {
+    font-size: 1rem;
+    margin: 16px 0px 0px 0px;
+    padding: 10px 15px;
+  }
+
+  #qText {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .btn {
+    font-size: 1rem;
+  }
+
+  body {
+    background-image: url(Assets/lake-reflections-sm.jpg);
+  }
+}
