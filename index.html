@@ -16,7 +16,7 @@
           <div id="timerClock"></div>
         </div>
         <div class="row">
-          <h1>JavaScript quiz</h1>
+          <h1 id="quiz-title"></h1>
         </div>
       </header>
     
@@ -28,13 +28,12 @@
           </div>
 
           <div class="card-body">
-            <form>
-                <div id="answer-prompt">Please choose the <strong>best</strong> answer:</div>
-                <button id="answer1" class="btn answer">Answer Choice 1</button>
-                <button id="answer2" class="btn answer">Answer Choice 2</button>
-                <button id="answer3" class="btn answer">Answer Choice 3</button>
-                <button id="answer4" class="btn answer">Answer Choice 4</button>              
-            </form>
+                <div id="answer-prompt" class="hide">Please choose the <strong>best</strong> answer:
+                <button id="A" class="btn answer"></button>
+                <button id="B" class="btn answer"></button>
+                <button id="C" class="btn answer"></button>
+                <button id="D" class="btn answer"></button>
+                </div>              
             <div id="result"></div>
           </div>
      
@@ -49,6 +48,8 @@
         <div class="row">
           <div class="floater" id="copyright">&copy; 2020 <a href="https://bohdicave.github.io/">Bohdan Pechenyak</a></div>
         </div>
+        <p>&nbsp;</p>
+        
       </footer>
 
     <script src="script.js"></script>
