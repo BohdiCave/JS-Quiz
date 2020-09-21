@@ -24,6 +24,7 @@ body a {
 
 #answer-prompt {
   font-size: 20px;
+  color: black;
 }
 
 header {
@@ -99,8 +100,6 @@ h2 {
   border: none;
   background: hsla(360, 91%, 36%, .8);
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
   color: hsl(0, 0%, 100%);
   display: inline-block;
   font-size: 20px;
@@ -118,17 +117,15 @@ h2 {
 .newDiv {
   margin-top: 10px;
   font-size: 40px;
-  color: black;
+  color: rgb(0,0,0);
   text-align: center;
   white-space: pre-line;
 }
 
 .answer {
   border: none;
-  background: rgba(8, 135, 83, 0.9);
+  background: rgba(8, 135, 83, 1);
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
   color: hsl(0, 0%, 100%);
   display: block;
   font-size: 20px;
@@ -142,6 +139,7 @@ h2 {
 #result {
   text-align: center;
   font-size: 20px;  
+  color: rgb(0,0,0);
 }
 
 button[disabled] {
