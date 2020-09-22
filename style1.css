@@ -22,11 +22,6 @@ body a {
   text-decoration: none;
 }
 
-#answer-prompt {
-  font-size: 20px;
-  color: black;
-}
-
 header {
   text-align: center;
   margin-top: 30px;
@@ -39,16 +34,6 @@ h2 {
   font-size: 28px;
 }
 
-#scores-timer {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px;
-}
-
-#scores, #timerClock {
-    font-size: 20px;
-}
-
 .card {
   background-color: rgba(256, 256, 256, .7);
   border-radius: 5px;
@@ -57,7 +42,7 @@ h2 {
   color: hsl(206, 17%, 28%);
   font-size: 18px;
   margin: 0 auto;
-  width: 60%;
+  width: 45%;
   padding: 20px 30px;
 }
 
@@ -110,46 +95,27 @@ h2 {
   cursor: pointer;
 }
 
+#back {
+    color: rgb(256, 256, 256);
+    text-decoration: none;
+}
+
+#back:hover {
+    color: rgb(0,0,0);
+}
+
 .hide {
   display: none;
 }
 
-.newDiv {
-  margin-top: 10px;
-  font-size: 40px;
-  color: rgb(0,0,0);
-  text-align: center;
-  white-space: pre-line;
-}
-
-.answer {
-  border: none;
-  background: rgba(8, 135, 83, 1);
-  border-radius: 25px;
-  color: hsl(0, 0%, 100%);
-  display: block;
-  font-size: 20px;
-  line-height: 20px;
-  margin: 5px;
-  padding: 5px 20px;
-  text-align: center;
-  cursor: pointer;
-}
-
-#result {
-  text-align: center;
-  font-size: 20px;  
-  color: rgb(0,0,0);
-}
-
-#scores-table {
+#child-table {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
-#scoresList, #initialsList {
+#scoresList {
   color: rgb(0,0,0);
-  font-size: 28px;
+  font-size: 24px;
 
 }
 
@@ -175,7 +141,7 @@ button[disabled] {
 
 a:hover {
   text-decoration: underline;
-  color: black;
+  color: rgb(0,0,0);
 }
 
 @media (max-width: 767px) {
@@ -183,10 +149,6 @@ a:hover {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
-  }
-
-  #qText {
-    font-size: 1.5rem;
   }
 
   #copyright {

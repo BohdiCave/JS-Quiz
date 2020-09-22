@@ -1,27 +1,27 @@
 // Assignment Code
 var questions = [
-{Question:"What is the most efficient method of accesing the elements of HTML DOM via JavaScript?",
+{Question:"The most efficient method of accesing the DOM via JavaScript is the...",
 A: "A: querySelector method",
 B: "B: setAttribute and addClass methods",
-C: "C: querySelector method + variable assignment",
-D: "D: Variable assignment approach",
+C: "C: querySelector method and assignment of variables",
+D: "D: variable assignment approach",
 Answer: "C"},
 {Question:"What are the 5 basic concepts of programming?",
-A: "A: Variables, Classes, Selectors, Attributes, Functions",
-B: "B: Constants, Variables, Functions, Objects, Arrays",
-C: "C: Syntax, Variables, Control, Data, Tools",
-D: "D: Functions, Strings, Variables, Syntax, Objects",
+A: "A: Attributes, variables, classes, selectors, functions",
+B: "B: Constants, variables, arrays, objects, functions",
+C: "C: Syntax, variables, control structure, data structure, tools",
+D: "D: Syntax, variables, strings, objects, functions",
 Answer: "C"},
-{Question:"What is wrong with the following syntax: window.getElementById('#button').addEventListener(click, function() {}; ?",
-A: "A: Window is not the appropriate object to start with",
-B: "B: Missing quotes around 'click' in 'addEventListener' method",
-C: "C: Syntax of the 'addEventListener' method",
+{Question:"Identify problem(s): \r\n" + "html.getElementById('#button').addEventListener(click, function() {}; ".italics(),
+A: "A: 'html' is not an appropriate object to start with",
+B: "B: Missing quotes around 'click' event",
+C: "C: Syntax of the event listener method",
 D: "D: All of the above",
 Answer: "D"},
-{Question:"Why is it important to assign variables at the beginning of the script?",
-A: "A: Global scope and ease of access throughout the script",
+{Question:"Why do we assign variables at the top?",
+A: "A: To set the scope and for ease of access",
 B: "B: Because that's how it's done",
-C: "C: Historical conventions within the coding community",
+C: "C: Historical conventions among the coders",
 D: "D: It helps plan the flow of code",
 Answer: "A"},
 {Question:"What is the difference between a method and a function?",
@@ -43,12 +43,11 @@ var aPrompt = document.querySelector("#answer-prompt");
 var timerClock = document.querySelector("#timerClock");
 var cardFooter = document.querySelector(".card-footer");
 var cardBody = document.querySelector(".card-body");
-var titleDiv;
-var choice;
+var titleDiv, choice, finalScore, highScore;
 var correct = 0;
 var place = 0;
 console.log(place);
-var timeLeft = 50;
+var timeLeft = 100;
 
 // Function code
 // Timer function, with quiz end if time is up
@@ -115,15 +114,36 @@ function checkAnswer() {
   // Advancing the position or ending the quiz
   place++;
   console.log(place); 
+  // Fail: fewer than 3 correct answers
   if (place > 4 && correct <=2) {
     endQuiz();
     titleDiv.textContent = "Sorry, you did not answer enough questions correctly. Please try again later."   
+  // Pass: 3 or more correct answers
   } else if (place > 4 && correct >= 3) {
     endQuiz();
-    titleDiv.textContent = "Congratulations! You passed this quiz. \r\n Correct answers: " + correct + "\r\n Final score: " + ((timeLeft - 1) + (correct * 10)); 
+    var finalScore = ((timeLeft - 1) + (correct * 10));
+    titleDiv.textContent = "Congratulations! You passed this quiz. \r\n Correct answers: " + correct + "\r\n Final score: " + finalScore; 
+    cardFooter.innerHTML = "<button id='add-score' class='btn'>Save your score</button>";
+    // Event listener for saving a score
+    document.getElementById("add-score").addEventListener("click", function() {
+      this.setAttribute("disabled", true);
+      var initials = prompt("Enter your initials");
+      highScore = {User: initials, Score: finalScore};
+      var highScores = localStorage.getItem("High Scores") || "[]";
+      console.log(highScores);
+      highScores = [...JSON.parse(highScores), highScore];
+      highScores.sort(function (a,b) {
+        return parseFloat(b.Score) - parseFloat(a.Score);
+      });     
+      highScores = highScores.slice(0,5);
+      console.log(highScores);
+      localStorage.setItem("High Scores", JSON.stringify(highScores));
+    });
+  // Fail: time is up 
   } else if (timeLeft < 0) {
     endQuiz();
     titleDiv.textContent = "Time is up! Sorry, you did not pass. \r\n Please try again later."
+  // Quiz still in progress
   } else {
     askQuestion(place);
   }

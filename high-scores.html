@@ -6,32 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>JS High Scores</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style1.css" />
   </head>
   <body>
 
       <header>
-        <div class="scores"></div>
         <h1>High Scores</h1>
       </header>
       
       <main class="container">
         <div class="card">
 
-          <div class="card-header">
-            <h2>JS Leaders:</h2>
-          </div>
+          <section class="card-header">
+            <h2>Top 5 JS-Quiz Leaders:</h2>
+          </section>
           
-          <div class="card-body">
-            <ol>
-                <li id="first-place"></li>
-            </ol>
-          </div>
+          <section id="parent-table" class="card-body">
+            <div id="child-table">
+              <ol id="scoresList"></ol> 
+            </div>
+          </section>
           
-          <div class="card-footer">
-            <button id="back-to-quiz" class="btn">Back to Quiz</button>
+          <section class="card-footer">
+            <button id="back-to-quiz" class="btn"><a id="back" href="index.html">Back to JS Quiz</a></button>
             <button id="clear-scores" class="btn">Clear Scores</button>
-          </div>
+          </section>
 
         </div>
       </main>
@@ -45,6 +44,6 @@
         <p>&nbsp;</p>
       </footer>
       
-    <script src="script.js"></script>
+    <script src="script1.js"></script>
   </body>
 </html>
