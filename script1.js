@@ -1,7 +1,9 @@
+// Assignment code
 var scoresList = document.querySelector("#scoresList");
 var clearScores = document.querySelector("#clear-scores");
 var highScores, scoresItem, scorePlace;
-      
+
+// Function code
 function updateScores() {
     highScores = JSON.parse(localStorage.getItem("High Scores"));
     console.log(highScores);     
@@ -23,6 +25,7 @@ function eraseScores(parentEl, childEl){
     }
 }
 
+// Execution code
 document.addEventListener("load", updateScores());
 clearScores.addEventListener("click", function() {
     eraseScores("parent-table", "child-table");

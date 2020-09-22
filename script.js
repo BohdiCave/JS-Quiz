@@ -1,4 +1,5 @@
 // Assignment Code
+// Questions, answer choices, and correct answers as an array of objects
 var questions = [
 {Question:"The most efficient method of accesing the DOM via JavaScript is the...",
 A: "A: querySelector method",
@@ -30,7 +31,7 @@ B: "B: No substantial difference - they are equivalent",
 C: "C: Methods are used only manipulate variables",
 D: "D: Functions are used only with objects",
 Answer: "B"}];
-
+// Getting document elements
 var A = document.querySelector("#A");
 var B = document.querySelector("#B");
 var C = document.querySelector("#C");
@@ -43,6 +44,7 @@ var aPrompt = document.querySelector("#answer-prompt");
 var timerClock = document.querySelector("#timerClock");
 var cardFooter = document.querySelector(".card-footer");
 var cardBody = document.querySelector(".card-body");
+//Declaring additional variables to be used 
 var titleDiv, choice, finalScore, highScore;
 var correct = 0;
 var place = 0;
@@ -124,19 +126,23 @@ function checkAnswer() {
     var finalScore = ((timeLeft - 1) + (correct * 10));
     titleDiv.textContent = "Congratulations! You passed this quiz. \r\n Correct answers: " + correct + "\r\n Final score: " + finalScore; 
     cardFooter.innerHTML = "<button id='add-score' class='btn'>Save your score</button>";
-    // Event listener for saving a score
+    // Event listener for clicking the "save scores" button
     document.getElementById("add-score").addEventListener("click", function() {
       this.setAttribute("disabled", true);
       var initials = prompt("Enter your initials");
+      // Saving the user-score pair as an object  
       highScore = {User: initials, Score: finalScore};
+      // adding it to a sorted array of top 5 scores (retrieved from local memory)
       var highScores = localStorage.getItem("High Scores") || "[]";
       console.log(highScores);
       highScores = [...JSON.parse(highScores), highScore];
+      //sorting the array in descending order and cutting after five terms
       highScores.sort(function (a,b) {
         return parseFloat(b.Score) - parseFloat(a.Score);
       });     
       highScores = highScores.slice(0,5);
       console.log(highScores);
+      // saving the updated array into local memory
       localStorage.setItem("High Scores", JSON.stringify(highScores));
     });
   // Fail: time is up 

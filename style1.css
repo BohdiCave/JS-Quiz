@@ -1,3 +1,4 @@
+/* General */
 *,
 *::before,
 *::after {
@@ -22,6 +23,21 @@ body a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+  color: rgb(0,0,0);
+}
+
+h2 {
+  font-size: 28px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+  
+/* Header */
 header {
   text-align: center;
   margin-top: 30px;
@@ -30,10 +46,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
-h2 {
-  font-size: 28px;
-}
-
+/* Card */
 .card {
   background-color: rgba(256, 256, 256, .7);
   border-radius: 5px;
@@ -81,6 +94,21 @@ h2 {
   clear: both;
 }
 
+.hide {
+  display: none;
+}  
+
+#child-table {
+  display: flex;
+  justify-content: flex-start;
+}
+  
+#scoresList {
+  color: rgb(0,0,0);
+  font-size: 24px;
+}
+
+/* Buttons */
 .btn {
   border: none;
   background: hsla(360, 91%, 36%, .8);
@@ -96,27 +124,12 @@ h2 {
 }
 
 #back {
-    color: rgb(256, 256, 256);
-    text-decoration: none;
+  color: rgb(256, 256, 256);
+  text-decoration: none;
 }
 
 #back:hover {
-    color: rgb(0,0,0);
-}
-
-.hide {
-  display: none;
-}
-
-#child-table {
-  display: flex;
-  justify-content: flex-start;
-}
-
-#scoresList {
   color: rgb(0,0,0);
-  font-size: 24px;
-
 }
 
 button[disabled] {
@@ -124,11 +137,7 @@ button[disabled] {
   background: #c0c7cf;
 }
 
-.row {
-  display: flex;
-  justify-content: center;
-}
-
+/* Footer */
 #copyright {
   color: darkslategray;
   font-size: 18px;
@@ -139,11 +148,7 @@ button[disabled] {
   padding: 0px 15px;
 }
 
-a:hover {
-  text-decoration: underline;
-  color: rgb(0,0,0);
-}
-
+/* Media queries for tablets and smartphones */
 @media (max-width: 767px) {
   .btn {
     font-size: 1rem;
