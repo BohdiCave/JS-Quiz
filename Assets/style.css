@@ -14,7 +14,7 @@ body {
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #f9fbfd;
-  background-image: url("./Assets/Images/bigsur_1280x7202.jpg");
+  background-image: url("./Images/bigsur_1280x7202.jpg");
   background-size: cover;
 }
 
@@ -198,7 +198,7 @@ button[disabled] {
   }
   
   body {
-    background-image: url("./Assets/Images/bigsur_sm.jpg");
+    background-image: url("./Images/bigsur_sm.jpg");
   }
 
   .card {
